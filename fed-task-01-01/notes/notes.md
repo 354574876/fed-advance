@@ -238,3 +238,42 @@ Reflect.ownKeys(fixObj);
 // 13. Reflect.setPrototypeOf(target, prototype)
 //     它可设置对象的原型（即内部的 [[Prototype]] 属性）为另一个对象或 null，如果操作成功返回 true，否则返回 false。
 ```
+
+### 新的数据结构 Set 和 Map
+#### Set
+实例方法：
+* Set.prototype.size
+* Set.prototype.add
+* Set.prototype.delete
+* Set.prototype.has
+* Set.prototype.clear
+* Set.prototype.keys
+* Set.prototype.values
+* Set.prototype.entries
+* Set.prototype.forEach
+```js
+// 去除数组的重复成员
+[...new Set([1, 2, 3, 4, 4, 5, 5])]
+
+
+let set = new Set(['red', 'green', 'blue']);
+
+for (let item of set.keys()) {
+  console.log(item);
+}
+// red
+// green
+// blue
+```
+
+#### Map
+> 它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适
+
+注意点: 只有对同一个对象的引用，Map 结构才将其视为同一个键。这一点要非常小心。
+
+````js
+const map = new Map();
+
+map.set(['a'], 555);
+map.get(['a']) // undefined
+````
