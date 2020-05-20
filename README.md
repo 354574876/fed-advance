@@ -100,7 +100,7 @@ JS数据类型区分原始数据类型和引用数据类型，原始数据类型
 * process.nextTick
 
 Event Loop 运行机制：
-![avatar](img/event_loop.png)
+![事件机制](https://github.com/354574876/fed-advance/blob/master/img/event_loop.png)
 
 ### 9. 使用promise进行代码改进
 ```js
